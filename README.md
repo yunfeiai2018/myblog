@@ -4,7 +4,7 @@
 <div class="post-list">
     {% for post in site.posts %}
     <div class="post-item">
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="/pg-blog/{{ post.url }}">{{ post.title }}</a>
     </div>
     {% endfor %}
 </div>
