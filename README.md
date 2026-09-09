@@ -1,4 +1,10 @@
-# my first blog
-<span style="color:red;background-color:black;font-size:34px;">I'am Xiaohang.Ai!</span>
-<br/>
-[Day01日](day01/hello.html)
+<div class="banner">
+    <h1>Oscar's blog</h1>
+</div>
+<div class="post-list">
+    {% for post in site.posts %}
+    <div class="post-item">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+    {% endfor %}
+</div>
