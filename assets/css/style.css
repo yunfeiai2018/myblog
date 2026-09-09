@@ -1,4 +1,3 @@
-
 /* ========================================
    全局重置（仿 task01 极简风格）
    ======================================== */
@@ -18,7 +17,7 @@ body {
    顶部大横幅（Banner）
    ======================================== */
 .banner {
-    background: #888;          /* task01 的经典灰色 */
+    background: #888;
     color: #fff;
     text-align: center;
     padding: 120px 20px;
@@ -46,27 +45,55 @@ body {
     padding: 0 20px;
 }
 
+/* 每一篇文章条目：标题在左，日期在右 */
 .post-item {
+    display: flex;
+    justify-content: space-between;  /* 两端对齐，标题靠左，日期靠右 */
+    align-items: baseline;           /* 基线对齐 */
     font-size: 40px;
     font-weight: bold;
     padding: 10px 0;
+    border-bottom: 1px solid #eee;   /* 可选：细分割线，更清爽 */
 }
 
+/* 标题链接 */
 .post-item a {
     color: #222;
     text-decoration: none;
     transition: color 0.2s;
+    flex-shrink: 1;                  /* 标题过长时允许收缩 */
+    margin-right: 20px;              /* 与日期保持间距 */
 }
 
 .post-item a:hover {
     text-decoration: underline;
 }
 
-/* 右侧日期样式 */
+/* 右侧日期 */
 .post-meta {
-    font-size: 18px;                 /* 日期小一点，形成对比 */
-    font-weight: normal;             /* 不需要加粗 */
-    color: #999;                     /* 灰色显得低调 */
-    white-space: nowrap;             /* 强制日期不换行（如 "September 9, 2026"） */
-    flex-shrink: 0;                  /* 固定宽度，不被挤压 */
+    font-size: 18px;                 /* 比标题小，突出主次 */
+    font-weight: normal;
+    color: #999;
+    white-space: nowrap;             /* 强制日期不换行 */
+    flex-shrink: 0;                  /* 日期固定宽度，不被挤压 */
+}
+
+/* ========================================
+   手机端适配（屏幕宽度小于 600px）
+   ======================================== */
+@media (max-width: 600px) {
+    .banner {
+        padding: 60px 20px;
+    }
+    .banner h1 {
+        font-size: 40px;
+    }
+    .post-item {
+        font-size: 22px;             /* 手机上缩小字号 */
+        flex-wrap: wrap;             /* 允许换行，避免太拥挤 */
+    }
+    .post-meta {
+        font-size: 14px;
+        margin-left: 0;
+    }
 }
