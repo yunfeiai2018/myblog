@@ -1,33 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-.banner {
-    background: #888;
-    color: #fff;
-    text-align: center;
-    padding: 120px 20px;
-}
-.banner h1 {
-    font-size: 80px;
-}
-.post-list {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
 .post-item {
-    font-size: 40px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 10px;
-}
-.post-item a {
-    color: #222;
-    text-decoration: none;
-}
-.post-item a:hover {
-    text-decoration: underline;
+    display: flex;
+    justify-content: space-between;  /* 两端对齐 */
+    align-items: center;             /* 垂直居中 */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
 .post-date {
     color: #999;
